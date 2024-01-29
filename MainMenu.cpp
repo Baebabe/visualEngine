@@ -9,16 +9,6 @@ MainMenu::MainMenu(sf::RenderWindow* window, std::stack<State*>* stack) :
 	initButtons();
 }
 
-void MainMenu::processEvents()
-{
-	sf::Event evnt;
-	while (window->pollEvent(evnt))
-	{
-		if (evnt.type == sf::Event::Closed)
-			window->close();
-	}
-}
-
 void MainMenu::update()
 {
 	updateMousePosition();

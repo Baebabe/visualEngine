@@ -10,7 +10,6 @@ public:
 	State(sf::RenderWindow* , std::stack<State*>* );
 
 	//MAIN STUFF
-	virtual void processEvents() = 0;
 	virtual void update() = 0;
 	virtual void render() = 0;
 

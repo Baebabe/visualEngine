@@ -7,7 +7,6 @@ class Parallel :
 public:
     Parallel(sf::RenderWindow*, std::stack<State*>*);
 
-    virtual void processEvents();
     virtual void update();
     virtual void render();
 

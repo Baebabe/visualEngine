@@ -8,7 +8,6 @@ public:
     MainMenu(sf::RenderWindow* window, std::stack<State*> *);
 
     //Updates
-    virtual void processEvents();
     virtual void update();
     virtual void render();
 

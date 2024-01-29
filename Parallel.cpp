@@ -6,16 +6,6 @@ Parallel::Parallel(sf::RenderWindow*window, std::stack<State*>* stack)
 	initButtons();
 }
 
-void Parallel::processEvents()
-{
-	sf::Event evnt;
-	while (window->pollEvent(evnt))
-	{
-		if (evnt.type == sf::Event::Closed)
-			window->close();
-	}
-}
-
 void Parallel::update()
 {
 	updateMousePosition();

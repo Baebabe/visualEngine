@@ -7,7 +7,6 @@ public:
     Sequential(sf::RenderWindow*, std::stack<State*>*);
 
     //MAIN STUFF
-    virtual void processEvents();
     virtual void update();
     virtual void render();
 

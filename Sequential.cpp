@@ -6,16 +6,6 @@ Sequential::Sequential(sf::RenderWindow* window, std::stack<State*>* stack)
 	initButtons();
 }
 
-void Sequential::processEvents()
-{
-	sf::Event evnt;
-	while (window->pollEvent(evnt))
-	{
-		if (evnt.type == sf::Event::Closed)
-			window->close();
-	}
-}
-
 void Sequential::update()
 {
 	updateMousePosition();

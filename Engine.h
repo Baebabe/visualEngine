@@ -9,7 +9,6 @@ public:
 	void initWindows();
 	Engine();
 	void run();
-	void processEvents();
 	void update();
 	void render();
 

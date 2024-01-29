@@ -21,15 +21,17 @@ void Engine::run()
 {
 	while (this->window->isOpen())
 	{
-		processEvents();
-		update();
+		sf::Event evnt;
+		while (window->pollEvent(evnt))
+		{
+			if (evnt.type == sf::Event::Closed)
+			{
+				window->close();
+			}
+			update();
+		}
 		render();
 	}
-}
-
-void Engine::processEvents()
-{
-	stack_of_states.top()->processEvents();
 }
 
 void Engine::update()
