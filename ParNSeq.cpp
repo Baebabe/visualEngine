@@ -14,9 +14,7 @@ void ParNSeq::update()
 
 void ParNSeq::render()
 {
-	window->clear();
 	renderButtons();
-	window->display();
 }
 
 void ParNSeq::initButtons()

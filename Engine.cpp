@@ -41,7 +41,9 @@ void Engine::update()
 
 void Engine::render()
 {
+	window->clear(sf::Color(128, 128, 128, 128));
 	stack_of_states.top()->render();
+	window->display();
 }
 
 

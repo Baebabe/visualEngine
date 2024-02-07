@@ -14,9 +14,7 @@ void Parallel::update()
 
 void Parallel::render()
 {
-	window->clear();
 	renderButtons();
-	window->display();
 }
 
 void Parallel::initButtons()

@@ -1,4 +1,5 @@
 #include "Sequential.h"
+#include "Bubble.h"
 
 Sequential::Sequential(sf::RenderWindow* window, std::stack<State*>* stack)
 	: State(window, stack)
@@ -14,39 +15,37 @@ void Sequential::update()
 
 void Sequential::render()
 {
-	window->clear();
 	renderButtons();
-	window->display();
 }
 
 void Sequential::initButtons()
 {
-	buttonMap["Bubble"] = new Button(40.f, 200.f, 960.f, 20.f,
-		"BubbleSort", sf::Color::Red, sf::Color::Blue);
+	buttonMap["Bubble"] = new Button(40.f, 200.f, 1800.f, 20.f,
+		"BubbleSort", sf::Color(100, 100, 100, 100), sf::Color(150,150,150,150));
 
-	buttonMap["Merge"] = new Button(40.f, 200.f, 960.f, 70.f,
-		"MergeSort", sf::Color::Red, sf::Color::Blue);
+	buttonMap["Merge"] = new Button(40.f, 200.f, 1800.f, 70.f,
+		"MergeSort", sf::Color(100, 100, 100, 100), sf::Color(150, 150, 150, 150));
 
-	buttonMap["Quick"] = new Button(40.f, 200.f, 960.f, 120.f,
-		"QuickSort", sf::Color::Red, sf::Color::Blue);
+	buttonMap["Quick"] = new Button(40.f, 200.f, 1800.f, 120.f,
+		"QuickSort", sf::Color(100, 100, 100, 100), sf::Color(150, 150, 150, 150));
 
-	buttonMap["Insertion"] = new Button(40.f, 200.f, 960.f, 170.f,
-		"InsertionSort", sf::Color::Red, sf::Color::Blue);
+	buttonMap["Insertion"] = new Button(40.f, 200.f, 1800.f, 170.f,
+		"InsertionSort", sf::Color(100, 100, 100, 100), sf::Color(150, 150, 150, 150));
 
-	buttonMap["Selection"] = new Button(40.f, 200.f, 960.f, 220.f,
-		"SelectionSort", sf::Color::Red, sf::Color::Blue);
+	buttonMap["Selection"] = new Button(40.f, 200.f, 1800.f, 220.f,
+		"SelectionSort", sf::Color(100, 100, 100, 100), sf::Color(150, 150, 150, 150));
 
-	buttonMap["Heap"] = new Button(40.f, 200.f, 960.f, 270.f,
-		"HeapSort", sf::Color::Red, sf::Color::Blue);
+	buttonMap["Heap"] = new Button(40.f, 200.f, 1800.f, 270.f,
+		"HeapSort", sf::Color(100, 100, 100, 100), sf::Color(150, 150, 150, 150));
 
-	buttonMap["Bucket"] = new Button(40.f, 200.f, 960.f, 320.f,
-		"BucketSort", sf::Color::Red, sf::Color::Blue);
+	buttonMap["Bucket"] = new Button(40.f, 200.f, 1800.f, 320.f,
+		"BucketSort", sf::Color(100, 100, 100, 100), sf::Color(150, 150, 150, 150));
 
-	buttonMap["Radix"] = new Button(40.f, 200.f, 960.f, 370.f,
-		"RadixSort", sf::Color::Red, sf::Color::Blue);
+	buttonMap["Radix"] = new Button(40.f, 200.f, 1800.f, 370.f,
+		"RadixSort", sf::Color(100, 100, 100, 100), sf::Color(150, 150, 150, 150));
 
-	buttonMap["Exit"] = new Button(40.f, 200.f, 960.f, 1020.f,
-		"Exit", sf::Color::Red, sf::Color::Blue);
+	buttonMap["Exit"] = new Button(40.f, 200.f, 1800.f, 470.f,
+		"Exit", sf::Color(100, 100, 100, 100), sf::Color(150, 150, 150, 150));
 }
 
 void Sequential::updateButtons()
@@ -55,9 +54,15 @@ void Sequential::updateButtons()
 	{
 		it.second->update(mousePosView);
 	}
+
 	if (buttonMap["Exit"]->isPressed())
 	{
 		stack_of_states->pop();
+	}
+
+	if (buttonMap["Bubble"]->isPressed())
+	{
+		stack_of_states->push(new Bubble(window, stack_of_states));
 	}
 }
 

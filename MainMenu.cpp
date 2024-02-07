@@ -17,9 +17,7 @@ void MainMenu::update()
 
 void MainMenu::render()
 {
-	window->clear();
 	renderButtons();
-	window->display();
 }
 
 void MainMenu::initButtons()
