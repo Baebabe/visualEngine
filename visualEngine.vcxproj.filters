@@ -42,6 +42,15 @@
     <ClCompile Include="ParNSeq.cpp">
       <Filter>States</Filter>
     </ClCompile>
+    <ClCompile Include="Sort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateRectangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Intermediate.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State.h">
@@ -63,6 +72,15 @@
       <Filter>States</Filter>
     </ClInclude>
     <ClInclude Include="ParNSeq.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateRectangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Intermediate.h">
       <Filter>States</Filter>
     </ClInclude>
   </ItemGroup>

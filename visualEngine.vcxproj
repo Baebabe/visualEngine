@@ -134,10 +134,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bubble.cpp" />
+    <ClCompile Include="Sort.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="CreateRectangle.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Intermediate.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Parallel.cpp" />
@@ -146,10 +147,11 @@
     <ClCompile Include="State.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bubble.h" />
+    <ClInclude Include="Sort.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="CreateRectangle.h" />
     <ClInclude Include="Engine.h" />
+    <ClInclude Include="Intermediate.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Parallel.h" />
     <ClInclude Include="ParNSeq.h" />

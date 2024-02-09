@@ -1,26 +1,28 @@
-#include "Bubble.h"
+#include "Sort.h"
 
-Bubble::Bubble(sf::RenderWindow* window, std::stack<State*>* stack_of_states)
+Sort::Sort(sf::RenderWindow* window, std::stack<State*>* stack_of_states,
+	std::vector<int>& array, CreateRectangle& rectBar)
 	: State(window, stack_of_states)
 {
-	initArray();
-	rectBar.initialize(array);
 
-	std::thread t(&Bubble::sort, this);
+	this->array = array;
+	this->rectBar = rectBar;
+
+	std::thread t(&Sort::bubbleSort, this);
 	t.detach();
 }
 
-void Bubble::update()
+void Sort::update()
 {
 	
 }
 
-void Bubble::render()
+void Sort::render()
 {
 	rectBar.renderRectangle(window);
 }
 
-void Bubble::initArray()
+void Sort::initArray()
 {
 	std::random_device rd;
 	std::default_random_engine engine{rd()};
@@ -32,7 +34,7 @@ void Bubble::initArray()
 	}
 }
 
-void Bubble::sort()
+void Sort::bubbleSort()
 {
 	int n = array.size();
 	for (int i = 0; i < n - 1; ++i) 	
@@ -49,14 +51,14 @@ void Bubble::sort()
 	}
 }
 
-void Bubble::initButtons()
+void Sort::initButtons()
 {
 }
 
-void Bubble::updateButtons()
+void Sort::updateButtons()
 {
 }
 
-void Bubble::renderButtons()
+void Sort::renderButtons()
 {
 }

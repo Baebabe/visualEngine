@@ -1,27 +1,26 @@
 #pragma once
 #include "State.h"
 #include "CreateRectangle.h"
-
-class Bubble :
+class Intermediate :
     public State
 {
 public:
-    Bubble(sf::RenderWindow*, std::stack<State*>*);
+    Intermediate(sf::RenderWindow* , std::stack<State*>* );
 
-    //Main stuff
+    //main stuff
     virtual void update();
     virtual void render();
 
-    // UNIQUE TO SORT STATES
+    //
     void initArray();
-    void sort();
 
-    //Button Related
+    // BUTTON RELATED
     virtual void initButtons();
     virtual void updateButtons();
     virtual void renderButtons();
 
 private:
+    std::map<std::string, Button*> buttonMap;
     std::vector<int> array;
     CreateRectangle rectBar;
 };

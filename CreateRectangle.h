@@ -12,6 +12,7 @@ public:
 	void initRects();
 	void updateRect(int, int, std::vector<int>&);
 	void renderRectangle(sf::RenderWindow *);
+	void justSize(std::vector<int>&);
 
 
 private:

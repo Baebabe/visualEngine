@@ -10,6 +10,8 @@ public:
     virtual void update();
     virtual void render();
 
+    void initFiles();
+
     //State cosmetics
 
     //Button related
@@ -21,5 +23,7 @@ private:
     sf::Text text;
     sf::Font font;
     std::map<std::string, Button*> buttonMap;
+
+    std::fstream file;
 };
 

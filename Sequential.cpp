@@ -1,10 +1,11 @@
 #include "Sequential.h"
-#include "Bubble.h"
+#include "Intermediate.h"
 
 Sequential::Sequential(sf::RenderWindow* window, std::stack<State*>* stack)
 	: State(window, stack)
 {
 	initButtons();
+	initFiles();
 }
 
 void Sequential::update()
@@ -16,6 +17,13 @@ void Sequential::update()
 void Sequential::render()
 {
 	renderButtons();
+}
+
+void Sequential::initFiles()
+{
+	file.open("Files/sort.txt");
+	if (!file.is_open())
+		std::cout << "Could not open file" << std::endl;
 }
 
 void Sequential::initButtons()
@@ -62,7 +70,50 @@ void Sequential::updateButtons()
 
 	if (buttonMap["Bubble"]->isPressed())
 	{
-		stack_of_states->push(new Bubble(window, stack_of_states));
+		file << "a";
+		stack_of_states->push(new Intermediate(window, stack_of_states));
+	}
+
+	if (buttonMap["Merge"]->isPressed())
+	{
+		file << "b";
+		stack_of_states->push(new Intermediate(window, stack_of_states));
+	}
+
+	if (buttonMap["Quick"]->isPressed())
+	{
+		file << "c";
+		stack_of_states->push(new Intermediate(window, stack_of_states));
+	}
+
+	if (buttonMap["Insertion"]->isPressed())
+	{
+		file << "d";
+		stack_of_states->push(new Intermediate(window, stack_of_states));
+	}
+
+	if (buttonMap["Selection"]->isPressed())
+	{
+		file << "e";
+		stack_of_states->push(new Intermediate(window, stack_of_states));
+	}
+
+	if (buttonMap["Heap"]->isPressed())
+	{
+		file << "f";
+		stack_of_states->push(new Intermediate(window, stack_of_states));
+	}
+
+	if (buttonMap["Bucket"]->isPressed())
+	{
+		file << "g";
+		stack_of_states->push(new Intermediate(window, stack_of_states));
+	}
+
+	if (buttonMap["Radix"]->isPressed())
+	{
+		file << "h";
+		stack_of_states->push(new Intermediate(window, stack_of_states));
 	}
 }
 
