@@ -49,6 +49,7 @@ void Sort::bubbleSort()
 			}
 		}
 	}
+	this->stack_of_states->pop();
 }
 
 void Sort::initButtons()

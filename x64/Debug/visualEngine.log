@@ -1,7 +1,5 @@
-﻿  Intermediate.cpp
-  Sort.cpp
+﻿  Sort.cpp
 C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\Sort.cpp(39,8): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Generating Code...
   visualEngine.vcxproj -> C:\Users\ACER\Documents\Hackathon\visualEngine\x64\Debug\visualEngine.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
