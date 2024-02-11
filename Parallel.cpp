@@ -1,4 +1,5 @@
 #include "Parallel.h"
+#include "Intermediate.h"
 
 Parallel::Parallel(sf::RenderWindow*window, std::stack<State*>* stack)
 	:State(window, stack)
@@ -54,6 +55,10 @@ void Parallel::updateButtons()
 		it.second->update(mousePosView);
 	}
 
+	if (buttonMap["Bubble"]->isPressed())
+	{
+		stack_of_states->push(new Intermediate(window, stack_of_states));
+	}
 	if (buttonMap["Exit"]->isPressed())
 	{
 		stack_of_states->pop();

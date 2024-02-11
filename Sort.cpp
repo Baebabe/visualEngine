@@ -45,11 +45,11 @@ void Sort::bubbleSort()
 			if (array[j] > array[j + 1]) 
 			{
 				std::swap(array[j], array[j + 1]);
-				rectBar.updateRect(j, j+1, array);
+				rectBar.updateRect(0, j, j+1, array);
 			}
 		}
 	}
-	this->stack_of_states->pop();
+	//this->stack_of_states->pop();
 }
 
 void Sort::initButtons()

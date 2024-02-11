@@ -8,12 +8,13 @@ class CreateRectangle
 {
 public:
 	CreateRectangle();
-	void initialize(std::vector<int> &);
-	void initRects();
-	void updateRect(int, int, std::vector<int>&);
+	void initialize(int,std::vector<int> &);
+	void initRects(int);
+	void updateRect(int, int, int, std::vector<int>&);
 	void renderRectangle(sf::RenderWindow *);
-	void justSize(std::vector<int>&);
+	void justSize(int, std::vector<int>&);
 
+	void justOne(int, int);
 
 private:
 	std::vector<sf::RectangleShape> bars;

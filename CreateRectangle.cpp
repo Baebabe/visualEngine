@@ -6,13 +6,13 @@ CreateRectangle::CreateRectangle()
 {
 }
 
-void CreateRectangle::initialize(std::vector<int> &array)
+void CreateRectangle::initialize(int pos, std::vector<int> &array)
 {
 	this->array = array;
-	initRects();
+	initRects(pos);
 }
 
-void CreateRectangle::initRects()
+void CreateRectangle::initRects(int pos)
 {
 	sf::Vector2f vect;
 	vect.x = 5.f;
@@ -22,42 +22,57 @@ void CreateRectangle::initRects()
 		bars.emplace_back(sf::RectangleShape(vect));
 	}
 
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < array.size() ; i++)
 	{
 		bars[i].setFillColor(sf::Color::Blue);
 		bars[i].setOrigin(sf::Vector2f(bars[i].getSize()));
-		bars[i].setPosition(100 + i * 10, 800.f);
+		bars[i].setPosition(pos + 100 + i * 10, 800.f);
 	}
 }
 
-void CreateRectangle::justSize(std::vector<int>& array)
+void CreateRectangle::justSize(int pos, std::vector<int>& array)
 {
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < array.size() ; i++)
 	{
 		bars[i].setSize(sf::Vector2f(5.f, 10 * array[i]));
 		bars[i].setOrigin(sf::Vector2f(bars[i].getSize()));
-		bars[i].setPosition(100 + i * 10, 800.f);
+		bars[i].setPosition(pos + 100 + i * 10, 800.f);
 	}
 }
 
-void CreateRectangle::updateRect(int i, int j, std::vector<int> &array)
+void CreateRectangle::justOne(int size, int ind)
+{
+	sf::RectangleShape rect;
+	rect.setSize(sf::Vector2f(5.f, 10 * size));
+	rect.setOrigin(sf::Vector2f(rect.getSize()));
+	rect.setPosition(800 + ind * 10, 800.f);
+
+	bars.push_back(rect);
+}
+
+void CreateRectangle::updateRect(int pos, int i, int j, std::vector<int> &array)
 {
 	//bars[i].setFillColor(sf::Color::Red);
 	bars[i].setSize(sf::Vector2f(bars[i].getSize().x, 10 * array[i]));
 	bars[j].setSize(sf::Vector2f(bars[j].getSize().x, 10 * array[j]));
 
 	bars[i].setOrigin(sf::Vector2f(bars[i].getSize()));
-	bars[i].setPosition(100 + i * 10, 800.f);
+	bars[i].setPosition(pos + 100 + i * 10, 800.f);
 
 	bars[j].setOrigin(sf::Vector2f(bars[j].getSize()));
-	bars[j].setPosition(100 + j * 10, 800.f);
+	bars[j].setPosition(pos + 100 + j * 10, 800.f);
 }
+
+
 
 void CreateRectangle::renderRectangle(sf::RenderWindow* window)
 {
-	for (const auto &it : bars)
+	if (!bars.empty())
 	{
-		window->draw(it);
+		for (const auto& it : bars)
+		{
+			window->draw(it);
+		}
 	}
 }
 

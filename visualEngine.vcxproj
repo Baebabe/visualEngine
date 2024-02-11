@@ -134,6 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Parallel_Sort.cpp" />
     <ClCompile Include="Sort.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="CreateRectangle.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="State.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Parallel_Sort.h" />
     <ClInclude Include="Sort.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="CreateRectangle.h" />

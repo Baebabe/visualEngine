@@ -9,12 +9,15 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="States">
       <UniqueIdentifier>{53f66ecd-0719-4df2-ab24-2434984bb3bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sorts">
+      <UniqueIdentifier>{3504baab-1cbb-4469-8b1d-6d210f5d56da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,14 +45,17 @@
     <ClCompile Include="ParNSeq.cpp">
       <Filter>States</Filter>
     </ClCompile>
-    <ClCompile Include="Sort.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CreateRectangle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Intermediate.cpp">
       <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="Parallel_Sort.cpp">
+      <Filter>Sorts</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateRectangle.cpp">
+      <Filter>Sorts</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort.cpp">
+      <Filter>Sorts</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -74,14 +80,17 @@
     <ClInclude Include="ParNSeq.h">
       <Filter>States</Filter>
     </ClInclude>
-    <ClInclude Include="Sort.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CreateRectangle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Intermediate.h">
       <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort.h">
+      <Filter>Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="Parallel_Sort.h">
+      <Filter>Sorts</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
