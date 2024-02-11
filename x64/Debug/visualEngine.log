@@ -1,3 +1,52 @@
-﻿  visualEngine.vcxproj -> C:\Users\ACER\Documents\Hackathon\visualEngine\x64\Debug\visualEngine.exe
+﻿  CreateRectangle.cpp
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(21,17): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(29,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(37,40): warning C4244: 'argument': conversion from '_Ty' to 'T', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(39,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(46,36): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(48,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(56,55): warning C4244: 'argument': conversion from '_Ty' to 'T', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(57,55): warning C4244: 'argument': conversion from '_Ty' to 'T', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(60,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(63,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Intermediate.cpp
+  Parallel_Sort.cpp
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\Parallel_Sort.cpp(135,8): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Sort.cpp
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\Sort.cpp(39,8): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  visualEngine.vcxproj -> C:\Users\ACER\Documents\Hackathon\visualEngine\x64\Debug\visualEngine.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

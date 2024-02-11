@@ -63,8 +63,6 @@ void CreateRectangle::updateRect(int pos, int i, int j, std::vector<int> &array)
 	bars[j].setPosition(pos + 100 + j * 10, 800.f);
 }
 
-
-
 void CreateRectangle::renderRectangle(sf::RenderWindow* window)
 {
 	if (!bars.empty())
@@ -75,4 +73,6 @@ void CreateRectangle::renderRectangle(sf::RenderWindow* window)
 		}
 	}
 }
+
+
 

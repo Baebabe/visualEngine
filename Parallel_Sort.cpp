@@ -78,7 +78,7 @@ void Parallel_Sort::merge()
 
 	while ((it1 != array1[0].end()) && (it2 != array1[1].end()))
 	{
-		std::this_thread::sleep_for(std::chrono::milliseconds(30));
+		std::this_thread::sleep_for(std::chrono::milliseconds(60));
 		std::lock_guard<std::mutex> lock(mtx);
 		if (*it1 < *it2)
 		{
@@ -107,7 +107,7 @@ void Parallel_Sort::merge()
 
 	while (it1 != array1[0].end())
 	{
-		std::this_thread::sleep_for(std::chrono::milliseconds(30));
+		std::this_thread::sleep_for(std::chrono::milliseconds(60));
 		std::lock_guard<std::mutex> lock(mtx);
 		array.push_back(*it1);
 		rectBar.justOne(array.back(), i);
@@ -117,7 +117,7 @@ void Parallel_Sort::merge()
 	
 	while (it2 != array1[1].end())
 	{
-		std::this_thread::sleep_for(std::chrono::milliseconds(30));
+		std::this_thread::sleep_for(std::chrono::milliseconds(60));
 		std::lock_guard<std::mutex> lock(mtx);
 		array.push_back(*it2);
 		rectBar.justOne(array.back(), i);
