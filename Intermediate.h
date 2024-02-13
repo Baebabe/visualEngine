@@ -5,7 +5,7 @@ class Intermediate :
     public State
 {
 public:
-    Intermediate(sf::RenderWindow* , std::stack<State*>* );
+    Intermediate(sf::RenderWindow* , std::stack<State*>*, bool);
 
     //main stuff
     virtual void update();
@@ -23,5 +23,7 @@ private:
     std::map<std::string, Button*> buttonMap;
     std::vector<int> array;
     CreateRectangle rectBar;
+
+    bool sequential;
 };
 

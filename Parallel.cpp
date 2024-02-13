@@ -57,7 +57,7 @@ void Parallel::updateButtons()
 
 	if (buttonMap["Bubble"]->isPressed())
 	{
-		stack_of_states->push(new Intermediate(window, stack_of_states));
+		stack_of_states->push(new Intermediate(window, stack_of_states, false));
 	}
 	if (buttonMap["Exit"]->isPressed())
 	{

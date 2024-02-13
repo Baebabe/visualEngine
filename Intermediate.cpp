@@ -2,12 +2,13 @@
 #include "Sort.h"
 #include "Parallel_Sort.h"
 
-Intermediate::Intermediate(sf::RenderWindow* window, std::stack<State*>* stack_of_states)
+Intermediate::Intermediate(sf::RenderWindow* window, std::stack<State*>* stack_of_states, bool seq)
 	: State(window, stack_of_states)
 {
 	initButtons();
 	initArray();
 	rectBar.initialize(0,array);
+	this->sequential = seq;
 }
 
 void Intermediate::update()
@@ -67,7 +68,14 @@ void Intermediate::updateButtons()
 
 	if (buttonMap["Start"]->isPressed())
 	{
-		stack_of_states->push(new Parallel_Sort(window, stack_of_states, array, rectBar));
+		if (sequential)
+		{
+			stack_of_states->push(new Sort(window, stack_of_states, array, rectBar));
+		}
+		else
+		{
+			stack_of_states->push(new Parallel_Sort(window, stack_of_states, array, rectBar));
+		}
 	}
 	
 	if (buttonMap["Exit"]->isPressed())

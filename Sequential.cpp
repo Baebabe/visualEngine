@@ -71,49 +71,49 @@ void Sequential::updateButtons()
 	if (buttonMap["Bubble"]->isPressed())
 	{
 		file << "a";
-		stack_of_states->push(new Intermediate(window, stack_of_states));
+		stack_of_states->push(new Intermediate(window, stack_of_states, true));
 	}
 
 	if (buttonMap["Merge"]->isPressed())
 	{
 		file << "b";
-		stack_of_states->push(new Intermediate(window, stack_of_states));
+		stack_of_states->push(new Intermediate(window, stack_of_states, true));
 	}
 
 	if (buttonMap["Quick"]->isPressed())
 	{
 		file << "c";
-		stack_of_states->push(new Intermediate(window, stack_of_states));
+		stack_of_states->push(new Intermediate(window, stack_of_states, true));
 	}
 
 	if (buttonMap["Insertion"]->isPressed())
 	{
 		file << "d";
-		stack_of_states->push(new Intermediate(window, stack_of_states));
+		stack_of_states->push(new Intermediate(window, stack_of_states, true));
 	}
 
 	if (buttonMap["Selection"]->isPressed())
 	{
 		file << "e";
-		stack_of_states->push(new Intermediate(window, stack_of_states));
+		stack_of_states->push(new Intermediate(window, stack_of_states, true));
 	}
 
 	if (buttonMap["Heap"]->isPressed())
 	{
 		file << "f";
-		stack_of_states->push(new Intermediate(window, stack_of_states));
+		stack_of_states->push(new Intermediate(window, stack_of_states, true));
 	}
 
 	if (buttonMap["Bucket"]->isPressed())
 	{
 		file << "g";
-		stack_of_states->push(new Intermediate(window, stack_of_states));
+		stack_of_states->push(new Intermediate(window, stack_of_states, true));
 	}
 
 	if (buttonMap["Radix"]->isPressed())
 	{
 		file << "h";
-		stack_of_states->push(new Intermediate(window, stack_of_states));
+		stack_of_states->push(new Intermediate(window, stack_of_states, true));
 	}
 }
 
