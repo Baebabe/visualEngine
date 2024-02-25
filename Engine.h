@@ -13,7 +13,7 @@ public:
 	void render();
 
 private:
-	std::stack<State*> stack_of_states;
+	std::stack<std::unique_ptr<State>> stack_of_states;
 	sf::RenderWindow *window;
 };
 

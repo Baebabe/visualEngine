@@ -14,7 +14,7 @@ public:
 	void renderRectangle(sf::RenderWindow *);
 	void justSize(int, std::vector<int>&);
 
-	void justOne(int, int);
+	void justOne(int, int);		// Adds one rectangle at a time (when merging)
 
 private:
 	std::vector<sf::RectangleShape> bars;

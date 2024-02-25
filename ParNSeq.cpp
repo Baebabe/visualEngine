@@ -1,6 +1,6 @@
 #include "ParNSeq.h"
 
-ParNSeq::ParNSeq(sf::RenderWindow* window, std::stack<State*>* stack)
+ParNSeq::ParNSeq(sf::RenderWindow* window, std::stack<std::unique_ptr<State>>* stack)
 	:State(window, stack)
 {
 	initButtons();

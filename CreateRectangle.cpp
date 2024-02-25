@@ -53,6 +53,10 @@ void CreateRectangle::justOne(int size, int ind)
 void CreateRectangle::updateRect(int pos, int i, int j, std::vector<int> &array)
 {
 	//bars[i].setFillColor(sf::Color::Red);
+	for (auto& it : bars)
+	{
+		it.setFillColor(sf::Color::Blue);
+	}
 	bars[i].setSize(sf::Vector2f(bars[i].getSize().x, 10 * array[i]));
 	bars[j].setSize(sf::Vector2f(bars[j].getSize().x, 10 * array[j]));
 
@@ -61,6 +65,9 @@ void CreateRectangle::updateRect(int pos, int i, int j, std::vector<int> &array)
 
 	bars[j].setOrigin(sf::Vector2f(bars[j].getSize()));
 	bars[j].setPosition(pos + 100 + j * 10, 800.f);
+
+	bars[i].setFillColor(sf::Color::Red);
+	bars[j].setFillColor(sf::Color::Red);
 }
 
 void CreateRectangle::renderRectangle(sf::RenderWindow* window)

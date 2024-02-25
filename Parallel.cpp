@@ -1,7 +1,7 @@
 #include "Parallel.h"
 #include "Intermediate.h"
 
-Parallel::Parallel(sf::RenderWindow*window, std::stack<State*>* stack)
+Parallel::Parallel(sf::RenderWindow*window, std::stack<std::unique_ptr<State>>* stack)
 	:State(window, stack)
 {
 	initButtons();
@@ -57,7 +57,7 @@ void Parallel::updateButtons()
 
 	if (buttonMap["Bubble"]->isPressed())
 	{
-		stack_of_states->push(new Intermediate(window, stack_of_states, false));
+		stack_of_states->push(std::make_unique<Intermediate>(window, stack_of_states, false));
 	}
 	if (buttonMap["Exit"]->isPressed())
 	{

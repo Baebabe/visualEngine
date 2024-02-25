@@ -2,7 +2,7 @@
 
 void Engine::initStates()
 {
-	stack_of_states.push(new MainMenu(window, &stack_of_states));
+	stack_of_states.push(std::make_unique<MainMenu>(window, &stack_of_states));
 }
 
 void Engine::initWindows()

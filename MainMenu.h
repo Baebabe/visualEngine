@@ -5,7 +5,7 @@ class MainMenu :
     public State
 {
 public:
-    MainMenu(sf::RenderWindow* window, std::stack<State*> *);
+    MainMenu(sf::RenderWindow* window, std::stack<std::unique_ptr<State>> *);
 
     //Updates
     virtual void update();

@@ -5,7 +5,7 @@ class Parallel :
     public State
 {
 public:
-    Parallel(sf::RenderWindow*, std::stack<State*>*);
+    Parallel(sf::RenderWindow*, std::stack<std::unique_ptr<State>>*);
 
     virtual void update();
     virtual void render();

@@ -5,7 +5,7 @@ class Intermediate :
     public State
 {
 public:
-    Intermediate(sf::RenderWindow* , std::stack<State*>*, bool);
+    Intermediate(sf::RenderWindow* , std::stack<std::unique_ptr<State>>*, bool);
 
     //main stuff
     virtual void update();

@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<fstream>
+#include<memory>
 #include"SFML/window.hpp"
 #include"SFML/graphics.hpp"
 #include"SFML/audio.hpp"

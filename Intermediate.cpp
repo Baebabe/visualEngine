@@ -2,7 +2,7 @@
 #include "Sort.h"
 #include "Parallel_Sort.h"
 
-Intermediate::Intermediate(sf::RenderWindow* window, std::stack<State*>* stack_of_states, bool seq)
+Intermediate::Intermediate(sf::RenderWindow* window, std::stack<std::unique_ptr<State>>* stack_of_states, bool seq)
 	: State(window, stack_of_states)
 {
 	initButtons();
@@ -70,11 +70,11 @@ void Intermediate::updateButtons()
 	{
 		if (sequential)
 		{
-			stack_of_states->push(new Sort(window, stack_of_states, array, rectBar));
+			stack_of_states->push(std::make_unique<Sort>(window, stack_of_states, array, rectBar));
 		}
 		else
 		{
-			stack_of_states->push(new Parallel_Sort(window, stack_of_states, array, rectBar));
+			stack_of_states->push(std::make_unique<Parallel_Sort>(window, stack_of_states, array, rectBar));
 		}
 	}
 	

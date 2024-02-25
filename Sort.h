@@ -6,7 +6,7 @@ class Sort :
     public State
 {
 public:
-    Sort(sf::RenderWindow*, std::stack<State*>*, std::vector<int>& , CreateRectangle& );
+    Sort(sf::RenderWindow*, std::stack<std::unique_ptr<State>>*, std::vector<int>& , CreateRectangle& );
 
     //Main stuff
     virtual void update();

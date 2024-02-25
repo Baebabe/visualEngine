@@ -7,7 +7,7 @@
 class State
 {
 public:
-	State(sf::RenderWindow* , std::stack<State*>* );
+	State(sf::RenderWindow* , std::stack<std::unique_ptr<State>>* );
 
 	//MAIN STUFF
 	virtual void update() = 0;
@@ -27,6 +27,6 @@ public:
 protected:
 	sf::Vector2f mousePosView;
 	sf::RenderWindow* window;
-	std::stack<State*>* stack_of_states;	
+	std::stack<std::unique_ptr<State>>* stack_of_states;	
 };
 

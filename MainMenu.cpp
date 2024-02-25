@@ -3,7 +3,7 @@
 #include "Parallel.h"
 #include "ParNSeq.h"
 
-MainMenu::MainMenu(sf::RenderWindow* window, std::stack<State*>* stack) :
+MainMenu::MainMenu(sf::RenderWindow* window, std::stack<std::unique_ptr<State>>* stack) :
 	State(window, stack)
 {
 	initButtons();
@@ -40,17 +40,17 @@ void MainMenu::updateButtons()
 
 	if (buttonMap["Sequential"]->isPressed())
 	{
-		stack_of_states->push(new Sequential(window, stack_of_states));
+		stack_of_states->push(std::make_unique<Sequential>(window, stack_of_states));
 	}
 
 	if (buttonMap["Parallel"]->isPressed())
 	{
-		stack_of_states->push(new Parallel(window, stack_of_states));
+		stack_of_states->push(std::make_unique<Parallel>(window, stack_of_states));
 	}
 
 	if (buttonMap["SeqNPar"]->isPressed())
 	{
-		stack_of_states->push(new ParNSeq(window, stack_of_states));
+		stack_of_states->push(std::make_unique<ParNSeq>(window, stack_of_states));
 	}
 	
 }

@@ -1,6 +1,6 @@
 #include "State.h"
 
-State::State(sf::RenderWindow* window, std::stack<State*>* stack)	
+State::State(sf::RenderWindow* window, std::stack<std::unique_ptr<State>>* stack)	
 {
 	this->window = window;
 	this->stack_of_states = stack;

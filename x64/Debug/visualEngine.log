@@ -1,7 +1,4 @@
-﻿  Intermediate.cpp
-  Parallel.cpp
-  Sequential.cpp
-  Generating Code...
+﻿  Sequential.cpp
   visualEngine.vcxproj -> C:\Users\ACER\Documents\Hackathon\visualEngine\x64\Debug\visualEngine.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

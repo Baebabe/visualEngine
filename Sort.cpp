@@ -1,6 +1,6 @@
 #include "Sort.h"
 
-Sort::Sort(sf::RenderWindow* window, std::stack<State*>* stack_of_states,
+Sort::Sort(sf::RenderWindow* window, std::stack<std::unique_ptr<State>>* stack_of_states,
 	std::vector<int>& array, CreateRectangle& rectBar)
 	: State(window, stack_of_states)
 {

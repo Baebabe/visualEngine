@@ -4,7 +4,7 @@ class ParNSeq :
     public State
 {
 public:
-    ParNSeq(sf::RenderWindow*, std::stack<State*>*);
+    ParNSeq(sf::RenderWindow*, std::stack<std::unique_ptr<State>>*);
 
     virtual void update();
     virtual void render();

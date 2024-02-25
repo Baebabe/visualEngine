@@ -4,7 +4,7 @@ class Sequential :
     public State
 {
 public:
-    Sequential(sf::RenderWindow*, std::stack<State*>*);
+    Sequential(sf::RenderWindow*, std::stack<std::unique_ptr<State>>*);
 
     //MAIN STUFF
     virtual void update();

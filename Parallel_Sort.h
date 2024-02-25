@@ -7,7 +7,7 @@ class Parallel_Sort :
     public State
 {
 public:
-    Parallel_Sort(sf::RenderWindow* , std::stack<State*>*,
+    Parallel_Sort(sf::RenderWindow* , std::stack<std::unique_ptr<State>>*,
         std::vector<int>&, CreateRectangle& );
 
     // MAIN STUFF  
