@@ -33,7 +33,10 @@ private:
     std::vector<int> array, array1[2];
     CreateRectangle rectBar, rectBar1[2];
 
+    bool finished{ false };
     std::mutex mtx;
+
+    std::map<std::string, Button*> buttonMap;
     //std::lock_guard<std::mutex> lock;
 };
 

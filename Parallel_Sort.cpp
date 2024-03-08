@@ -8,12 +8,17 @@ Parallel_Sort::Parallel_Sort(sf::RenderWindow* window, std::stack<std::unique_pt
 
 	splitData();
 	std::thread t(&Parallel_Sort::sortStart, this);
-
+	initButtons();
 	t.detach();
 }
 
 void Parallel_Sort::update()
 {
+	updateMousePosition();
+	if (finished)
+	{
+		updateButtons();
+	}
 }
 
 void Parallel_Sort::render()
@@ -23,6 +28,9 @@ void Parallel_Sort::render()
 
 	std::lock_guard<std::mutex> lock(mtx);
 	rectBar.renderRectangle(window);
+
+	
+	renderButtons();
 }
 
 void Parallel_Sort::splitData()
@@ -124,6 +132,7 @@ void Parallel_Sort::merge()
 		i++;
 		it2++;
 	}
+	finished = true;
 }
 
 void Parallel_Sort::initArray()
@@ -149,12 +158,27 @@ void Parallel_Sort::bubbleSort(int pos, int ind)
 
 void Parallel_Sort::initButtons()
 {
+	buttonMap["Exit"] = new Button(40.f, 200.f, 1800.f, 470.f,
+		"Exit", sf::Color(100, 100, 100, 100), sf::Color(150, 150, 150, 150));
 }
 
 void Parallel_Sort::updateButtons()
 {
+	for (auto& it : buttonMap)
+	{
+		it.second->update(mousePosView);
+	}
+
+	if (buttonMap["Exit"]->isPressed())
+	{
+		stack_of_states->pop();
+	}
 }
 
 void Parallel_Sort::renderButtons()
 {
+		for (auto& it : buttonMap)
+		{
+			it.second->render(window);
+		}
 }
