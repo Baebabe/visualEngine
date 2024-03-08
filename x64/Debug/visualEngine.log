@@ -1,4 +1,60 @@
-﻿  Sequential.cpp
+﻿  Parallel_Sort.cpp
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\Parallel_Sort.cpp(135,8): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Sort.cpp
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\Sort.cpp(39,8): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Button.cpp
+  CreateRectangle.cpp
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(21,17): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(21,17): warning C4244:         with
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(21,17): warning C4244:         [
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(21,17): warning C4244:             T=float
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(21,17): warning C4244:         ]
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(29,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(37,40): warning C4244: 'argument': conversion from '_Ty' to 'T', possible loss of data
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(37,40): warning C4244:         with
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(37,40): warning C4244:         [
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(37,40): warning C4244:             _Ty=int
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(37,40): warning C4244:         ]
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(37,40): warning C4244:         and
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(37,40): warning C4244:         [
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(37,40): warning C4244:             T=float
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(37,40): warning C4244:         ]
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(39,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(46,36): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(46,36): warning C4244:         with
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(46,36): warning C4244:         [
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(46,36): warning C4244:             T=float
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(46,36): warning C4244:         ]
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(48,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(60,55): warning C4244: 'argument': conversion from '_Ty' to 'T', possible loss of data
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(60,55): warning C4244:         with
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(60,55): warning C4244:         [
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(60,55): warning C4244:             _Ty=int
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(60,55): warning C4244:         ]
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(60,55): warning C4244:         and
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(60,55): warning C4244:         [
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(60,55): warning C4244:             T=float
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(60,55): warning C4244:         ]
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(61,55): warning C4244: 'argument': conversion from '_Ty' to 'T', possible loss of data
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(61,55): warning C4244:         with
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(61,55): warning C4244:         [
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(61,55): warning C4244:             _Ty=int
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(61,55): warning C4244:         ]
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(61,55): warning C4244:         and
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(61,55): warning C4244:         [
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(61,55): warning C4244:             T=float
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(61,55): warning C4244:         ]
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(64,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\CreateRectangle.cpp(67,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Engine.cpp
+  Intermediate.cpp
+  main.cpp
+  MainMenu.cpp
+  Parallel.cpp
+  ParNSeq.cpp
+  Sequential.cpp
+  State.cpp
+  Generating Code...
   visualEngine.vcxproj -> C:\Users\ACER\Documents\Hackathon\visualEngine\x64\Debug\visualEngine.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
