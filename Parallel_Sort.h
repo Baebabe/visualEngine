@@ -22,15 +22,31 @@ public:
     void merge();
 
     void initArray();
+
+    // BUBBLE SORT
     void bubbleSort(int, int);
+
+    // SELECTION SORT
     void selectionSort(int pos, int ind);
+
+    // MERGE SORT AND HELPERS 
     void mergeSort(int pos, int ind);
     void mergeSortHelper(std::vector<int>& arr, int l, int r, int ind, int pos);
     void mergee(std::vector<int>& arr, int l, int m, int r, int ind, int pos);
 
+    // QUICK SORT AND HELPERS
     void quickSort(int pos, int ind);
     void quickSortHelper(std::vector<int>& arr, int low, int high, int ind, int pos);
     int partition(std::vector<int>& arr, int low, int high, int ind, int pos);
+
+    // HEAP SORT AND HELPER
+    void heapSort(int pos, int ind);
+    void heapify(std::vector<int>& arr, int n, int i, int ind, int pos);
+
+    // RADIX SORT
+    void radixSort(int pos, int ind);
+    void countingSort(std::vector<int>& arr, int exp, int ind, int pos);
+
     // BUTTON RELATED
     virtual void initButtons();
     virtual void updateButtons();

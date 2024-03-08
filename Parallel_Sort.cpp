@@ -118,6 +118,32 @@ void Parallel_Sort::sortStart()
 		t1.join();
 		t2.join();
 	}
+	else if (whichSort == 'h')
+	{
+		std::thread t1([this, pos1, ind1]() {
+			Parallel_Sort::heapSort(pos1, ind1);
+			});
+
+		std::thread t2([this, pos2, ind2]() {
+			Parallel_Sort::heapSort(pos2, ind2);
+			});
+
+		t1.join();
+		t2.join();
+	}
+	else if (whichSort == 'r')
+	{
+		std::thread t1([this, pos1, ind1]() {
+			Parallel_Sort::radixSort(pos1, ind1);
+			});
+
+		std::thread t2([this, pos2, ind2]() {
+			Parallel_Sort::radixSort(pos2, ind2);
+			});
+
+		t1.join();
+		t2.join();
+	}
 
 
 	merge();
@@ -204,6 +230,8 @@ void Parallel_Sort::initArray()
 {
 }
 
+//QUICK SORT
+
 void Parallel_Sort::quickSort(int pos, int ind) {
 	quickSortHelper(array1[ind], 0, array1[ind].size() - 1, ind, pos);
 }
@@ -237,6 +265,7 @@ int Parallel_Sort::partition(std::vector<int>& arr, int low, int high, int ind, 
 	return (i + 1);
 }
 
+//BUBBLE SORT
 
 void Parallel_Sort::bubbleSort(int pos, int ind)
 {
@@ -254,6 +283,9 @@ void Parallel_Sort::bubbleSort(int pos, int ind)
 		}
 	}
 }
+
+//SELECTION SORT
+
 void Parallel_Sort::selectionSort(int pos, int ind)
 {
 	int n = array1[ind].size();
@@ -275,6 +307,8 @@ void Parallel_Sort::selectionSort(int pos, int ind)
 		}
 	}
 }
+
+//MERGE SORT
 
 void Parallel_Sort::mergeSort(int pos, int ind)
 {
@@ -346,6 +380,80 @@ void Parallel_Sort::mergee(std::vector<int>& arr, int l, int m, int r, int ind, 
 	}
 }
 
+//HEAP SORT
+void Parallel_Sort::heapSort(int pos, int ind) {
+	int n = array1[ind].size();
+
+	for (int i = n / 2 - 1; i >= 0; --i) {
+		heapify(array1[ind], n, i, ind, pos);
+	}
+
+	for (int i = n - 1; i > 0; --i) {
+		std::swap(array1[ind][0], array1[ind][i]);
+		std::lock_guard<std::mutex> lock(mtx);
+		rectBar1[ind].updateRect(pos, 0, i, array1[ind]); // Visualization update
+		std::this_thread::sleep_for(std::chrono::microseconds(speed / 3));
+		heapify(array1[ind], i, 0, ind, pos);
+	}
+}
+
+void Parallel_Sort::heapify(std::vector<int>& arr, int n, int i, int ind, int pos) {
+	int largest = i;
+	int left = 2 * i + 1;
+	int right = 2 * i + 2;
+
+	if (left < n && arr[left] > arr[largest]) {
+		largest = left;
+	}
+
+	if (right < n && arr[right] > arr[largest]) {
+		largest = right;
+	}
+
+	if (largest != i) {
+		std::swap(arr[i], arr[largest]);
+		std::lock_guard<std::mutex> lock(mtx);
+		rectBar1[ind].updateRect(pos, i, largest, arr); // Visualization update
+		std::this_thread::sleep_for(std::chrono::microseconds(speed / 3));
+		heapify(arr, n, largest, ind, pos);
+	}
+}
+
+//RADIX SORT
+void Parallel_Sort::radixSort(int pos, int ind) {
+	int max_element = *std::max_element(array1[ind].begin(), array1[ind].end());
+
+	for (int exp = 1; max_element / exp > 0; exp *= 10) {
+		countingSort(array1[ind], exp, ind, pos);
+	}
+}
+
+void Parallel_Sort::countingSort(std::vector<int>& arr, int exp, int ind, int pos) {
+	int n = arr.size();
+	std::vector<int> output(n);
+	std::vector<int> count(10, 0);
+
+	for (int i = 0; i < n; ++i) {
+		count[(arr[i] / exp) % 10]++;
+	}
+
+	for (int i = 1; i < 10; ++i) {
+		count[i] += count[i - 1];
+	}
+
+	for (int i = n - 1; i >= 0; --i) {
+		std::this_thread::sleep_for(std::chrono::microseconds(speed / 3));
+		output[count[(arr[i] / exp) % 10] - 1] = arr[i];
+		count[(arr[i] / exp) % 10]--;
+	}
+
+	for (int i = 0; i < n; ++i) {
+		std::this_thread::sleep_for(std::chrono::microseconds(speed / 3));
+		arr[i] = output[i];
+		std::lock_guard<std::mutex> lock(mtx);
+		rectBar1[ind].updateRect(pos, i, arr[i], arr); // Visualization update
+	}
+}
 
 void Parallel_Sort::initButtons()
 {
