@@ -1,8 +1,9 @@
 ﻿  Parallel_Sort.cpp
 C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\Parallel_Sort.cpp(57,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\Parallel_Sort.cpp(196,8): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\Parallel_Sort.cpp(212,8): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\Parallel_Sort.cpp(234,53): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\Parallel_Sort.cpp(208,53): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\Parallel_Sort.cpp(243,8): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\Parallel_Sort.cpp(259,8): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ACER\Documents\Hackathon\visualEngine\visualEngine\Parallel_Sort.cpp(281,53): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   visualEngine.vcxproj -> C:\Users\ACER\Documents\Hackathon\visualEngine\x64\Debug\visualEngine.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

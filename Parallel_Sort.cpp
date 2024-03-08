@@ -41,7 +41,7 @@ void Parallel_Sort::render()
 	rectBar.renderRectangle(window);
 	if (finished)
 	{
-	window->draw(infoText);	
+	//window->draw(infoText);	
 	renderButtons();
 	}
 }
@@ -100,6 +100,19 @@ void Parallel_Sort::sortStart()
 
 		std::thread t2([this, pos2, ind2]() {
 			Parallel_Sort::selectionSort(pos2, ind2);
+			});
+
+		t1.join();
+		t2.join();
+	}
+	else if (whichSort == 'q')
+	{
+		std::thread t1([this, pos1, ind1]() {
+			Parallel_Sort::quickSort(pos1, ind1);
+			});
+
+		std::thread t2([this, pos2, ind2]() {
+			Parallel_Sort::quickSort(pos2, ind2);
 			});
 
 		t1.join();
@@ -190,6 +203,40 @@ void Parallel_Sort::merge()
 void Parallel_Sort::initArray()
 {
 }
+
+void Parallel_Sort::quickSort(int pos, int ind) {
+	quickSortHelper(array1[ind], 0, array1[ind].size() - 1, ind, pos);
+}
+
+void Parallel_Sort::quickSortHelper(std::vector<int>& arr, int low, int high, int ind, int pos) {
+	if (low < high) {
+		int pi = partition(arr, low, high, ind, pos);
+
+		quickSortHelper(arr, low, pi - 1, ind, pos);
+		quickSortHelper(arr, pi + 1, high, ind, pos);
+	}
+}
+
+int Parallel_Sort::partition(std::vector<int>& arr, int low, int high, int ind, int pos) {
+	int pivot = arr[high]; // pivot
+	int i = (low - 1); // Index of smaller element
+
+	for (int j = low; j <= high - 1; j++) {
+		if (arr[j] < pivot) {
+
+			std::this_thread::sleep_for(std::chrono::microseconds(speed/3));
+			i++;
+			std::swap(arr[i], arr[j]);
+			std::lock_guard<std::mutex> lock(mtx);
+			rectBar1[ind].updateRect(pos, i, j, arr); // Visualization update
+		}
+	}
+	std::swap(arr[i + 1], arr[high]);
+	std::lock_guard<std::mutex> lock(mtx);
+	rectBar1[ind].updateRect(pos, i + 1, high, arr); // Visualization update
+	return (i + 1);
+}
+
 
 void Parallel_Sort::bubbleSort(int pos, int ind)
 {

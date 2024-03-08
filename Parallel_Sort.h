@@ -27,6 +27,10 @@ public:
     void mergeSort(int pos, int ind);
     void mergeSortHelper(std::vector<int>& arr, int l, int r, int ind, int pos);
     void mergee(std::vector<int>& arr, int l, int m, int r, int ind, int pos);
+
+    void quickSort(int pos, int ind);
+    void quickSortHelper(std::vector<int>& arr, int low, int high, int ind, int pos);
+    int partition(std::vector<int>& arr, int low, int high, int ind, int pos);
     // BUTTON RELATED
     virtual void initButtons();
     virtual void updateButtons();

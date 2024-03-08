@@ -70,6 +70,11 @@ void Parallel::updateButtons()
 		whichSort = 's';
 		stack_of_states->push(std::make_unique<Intermediate>(window, stack_of_states, whichSort, false));
 	}
+	if (buttonMap["Quick"]->isPressed())
+	{
+		whichSort = 'q';
+		stack_of_states->push(std::make_unique<Intermediate>(window, stack_of_states, whichSort, false));
+	}
 	if (buttonMap["Exit"]->isPressed())
 	{
 		stack_of_states->pop();
