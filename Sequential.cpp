@@ -68,7 +68,7 @@ void Sequential::updateButtons()
 		stack_of_states->pop();
 	}
 
-	if (buttonMap["Bubble"]->isPressed())
+	/*if (buttonMap["Bubble"]->isPressed())
 	{
 		file << "a";
 		stack_of_states->push(std::make_unique<Intermediate>(window, stack_of_states, true));
@@ -114,7 +114,7 @@ void Sequential::updateButtons()
 	{
 		file << "h";
 		stack_of_states->push(std::make_unique<Intermediate>(window, stack_of_states, true));
-	}
+	}*/
 }
 
 void Sequential::renderButtons()

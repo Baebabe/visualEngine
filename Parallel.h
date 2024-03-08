@@ -16,6 +16,7 @@ public:
     virtual void renderButtons();
 
 protected:
+    char whichSort;
     std::map<std::string, Button*> buttonMap;
     sf::Text text;
     sf::Font font;

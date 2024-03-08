@@ -8,6 +8,8 @@ CreateRectangle::CreateRectangle()
 
 void CreateRectangle::initialize(int pos, std::vector<int> &array)
 {
+	this->array.clear();
+	this->bars.clear();
 	this->array = array;
 	initRects(pos);
 }

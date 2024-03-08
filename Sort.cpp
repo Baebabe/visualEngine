@@ -1,7 +1,7 @@
 #include "Sort.h"
 
 Sort::Sort(sf::RenderWindow* window, std::stack<std::unique_ptr<State>>* stack_of_states,
-	std::vector<int>& array, CreateRectangle& rectBar)
+	std::vector<int>& array, CreateRectangle& rectBar, int speed)
 	: State(window, stack_of_states)
 {
 

@@ -57,7 +57,18 @@ void Parallel::updateButtons()
 
 	if (buttonMap["Bubble"]->isPressed())
 	{
-		stack_of_states->push(std::make_unique<Intermediate>(window, stack_of_states, false));
+		whichSort = 'b';
+		stack_of_states->push(std::make_unique<Intermediate>(window, stack_of_states, whichSort, false));
+	}
+	if (buttonMap["Merge"]->isPressed())
+	{
+		whichSort = 'm';
+		stack_of_states->push(std::make_unique<Intermediate>(window, stack_of_states, whichSort, false));
+	}
+	if (buttonMap["Selection"]->isPressed())
+	{
+		whichSort = 's';
+		stack_of_states->push(std::make_unique<Intermediate>(window, stack_of_states, whichSort, false));
 	}
 	if (buttonMap["Exit"]->isPressed())
 	{

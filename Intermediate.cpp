@@ -2,9 +2,10 @@
 #include "Sort.h"
 #include "Parallel_Sort.h"
 
-Intermediate::Intermediate(sf::RenderWindow* window, std::stack<std::unique_ptr<State>>* stack_of_states, bool seq)
+Intermediate::Intermediate(sf::RenderWindow* window, std::stack<std::unique_ptr<State>>* stack_of_states,char whichSort, bool seq)
 	: State(window, stack_of_states)
 {
+	this->whichSort = whichSort;
 	initButtons();
 	initArray();
 	rectBar.initialize(0,array);
@@ -28,7 +29,7 @@ void Intermediate::initArray()
 	std::default_random_engine engine{rd()};
 	std::uniform_int_distribution<int> ints{1, 50};
 
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < numElements; i++)
 	{
 		array.emplace_back(ints(engine));
 	}
@@ -50,6 +51,12 @@ void Intermediate::initButtons()
 	
 	buttonMap["Decrease"] = new Button(40.f, 50.f, 690.f, 900.f,
 		"-", sf::Color::Red, sf::Color::Blue);
+
+	buttonMap["IncreaseS"] = new Button(40.f, 60.f, 770.f, 900.f,
+		"++", sf::Color::Red, sf::Color::Blue);
+
+	buttonMap["DecreaseS"] = new Button(40.f, 60.f, 850.f, 900.f,
+		"--", sf::Color::Red, sf::Color::Blue);
 }
 
 void Intermediate::updateButtons()
@@ -70,12 +77,41 @@ void Intermediate::updateButtons()
 	{
 		if (sequential)
 		{
-			stack_of_states->push(std::make_unique<Sort>(window, stack_of_states, array, rectBar));
+			stack_of_states->push(std::make_unique<Sort>(window, stack_of_states, array, rectBar,speed));
 		}
 		else
 		{
-			stack_of_states->push(std::make_unique<Parallel_Sort>(window, stack_of_states, array, rectBar));
+			stack_of_states->push(std::make_unique<Parallel_Sort>(window, stack_of_states, array, rectBar,speed, whichSort));
 		}
+	}
+
+	if (buttonMap["Increase"]->isPressed())
+	{
+		numElements += 10;
+		array.clear();
+		initArray();
+		rectBar.initialize(0, array);
+		array.clear();
+		initArray();
+		rectBar.justSize(0, array);
+	}
+
+	if (buttonMap["Decrease"]->isPressed())
+	{
+		numElements -= 10;
+		array.clear();
+		initArray();
+		rectBar.initialize(0, array);
+	}
+
+	if (buttonMap["IncreaseS"]->isPressed())
+	{
+		speed = std::max(10, speed / 10);
+	}
+
+	if (buttonMap["DecreaseS"]->isPressed())
+	{
+		speed = speed * 10;
 	}
 	
 	if (buttonMap["Exit"]->isPressed())
